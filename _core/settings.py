@@ -10,7 +10,7 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("CHECK_DEV_MODE") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-
+HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
 
 INSTALLED_APPS = [
     "django.contrib.admin",

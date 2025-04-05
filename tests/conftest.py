@@ -14,16 +14,13 @@ django.setup()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning, module="pydantic")
 
-def pytest_configure(config):
+
+def pytest_configure(config: pytest.Config) -> None:
     """pytest 설정을 구성합니다."""
     warnings.filterwarnings(
-        "ignore", 
-        category=DeprecationWarning,
-        module="ninja.signature.utils"
+        "ignore", category=DeprecationWarning, module="ninja.signature.utils"
     )
-    
+
     warnings.filterwarnings(
-        "ignore",
-        category=DeprecationWarning,
-        module="pydantic._internal._config"
+        "ignore", category=DeprecationWarning, module="pydantic._internal._config"
     )
